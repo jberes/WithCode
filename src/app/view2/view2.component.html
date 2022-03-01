@@ -1,3 +1,25 @@
 <div class="group row">
-  <h4 class="h4">View 2 content</h4>
+  <igx-card type="outlined" [horizontal]="true" *ngFor="let item of northwindEmployees" class="card">
+    <igx-card-header>
+      <h3 igxCardHeaderTitle>{{ item.lastName }}</h3>
+      <h5 igxCardHeaderSubtitle>{{ item.firstName }}</h5>
+    </igx-card-header>
+    <igx-card-media width="64px" height="64px">
+      <img [src]="item.avatarUrl" />
+    </igx-card-media>
+    <igx-card-content class="body-content">
+      <p class="igx-typography__body-1 text">{{ item.title }}</p>
+    </igx-card-content>
+    <igx-card-actions class="actions-content">
+      <button igxButton="icon" igxRipple>
+        <igx-icon>favorite</igx-icon>
+      </button>
+      <button igxButton="icon" igxRipple>
+        <igx-icon>bookmark</igx-icon>
+      </button>
+      <button igxButton="icon" igxRipple>
+        <igx-icon>share</igx-icon>
+      </button>
+    </igx-card-actions>
+  </igx-card>
 </div>
